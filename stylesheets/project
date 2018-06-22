@@ -138,26 +138,40 @@ button {
   .language-switcher span {
     color: gray; }
 
-.tags-navigation {
+.tags-navigation a {
+  display: inline-block;
+  vertical-align: top;
+  width: 180px;
+  height: 100px;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  border-bottom: 0;
+  color: #ff6900;
+  background-color: rgba(255, 105, 0, 0.07); }
+  .tags-navigation a:hover {
+    background-color: rgba(255, 105, 0, 0.1); }
+  .tags-navigation a.active {
+    border: 2px solid #ff6900; }
+
+.headers-navigation {
+  margin-top: 10px;
   margin-bottom: 80px; }
-  .tags-navigation a {
+  .headers-navigation a {
     display: inline-block;
-    vertical-align: top;
-    width: 180px;
-    height: 100px;
-    margin-right: 7px;
-    margin-bottom: 7px;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    border-bottom: 0;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 19px;
+    cursor: pointer;
     color: #ff6900;
-    background-color: rgba(255, 105, 0, 0.07); }
-    .tags-navigation a:hover {
-      background-color: rgba(255, 105, 0, 0.1); }
-    .tags-navigation a.active {
-      border: 2px solid #ff6900; }
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255, 105, 0, 0.4); }
+    .headers-navigation a:hover {
+      background-color: rgba(255, 105, 0, 0.07); }
 
 .table {
   margin-top: 20px;
