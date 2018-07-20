@@ -10252,6 +10252,8 @@ if ( !noGlobal ) {
 
 return jQuery;
 } );
+
+
 $(document).ready(function() {
 
   var activeClass = location.hash.substring(1);
@@ -10261,16 +10263,18 @@ $(document).ready(function() {
 
   $('.js-tag-link').click(function(e) {
 
-    var activeClass = $(this).prop("hash").substring(1);
+    activeClass = $(this).prop("hash").substring(1);
     showArticles(activeClass);
     markActiveLink(activeClass);
+
+    $('html, body').scrollTop(0);
     
   });
 
   $('.js-scroll-link').click(function(e) {
 		e.preventDefault();
 
-		var linkOffset = -40;
+		var linkOffset = -70;
 		if ($($.attr(this, 'href')).data('scroll-link-offset')) {
 			linkOffset += $($.attr(this, 'href')).data('scroll-link-offset')
 		};
@@ -10280,14 +10284,31 @@ $(document).ready(function() {
 
 		}, 500);
   });
+
+  stickyNav();
+  $(window).scroll(stickyNav);
+
+  function showArticles(tagName) {
+    $('.js-scroll-link').hide();
+    $('article').hide();
+    if (tagName) {
+      $('.'+tagName).show();
+    }
+  }
   
 });
 
-function showArticles(tagName) {
-  $('.js-scroll-link').hide();
-  $('article').hide();
-  $('.'+tagName).show();
+function stickyNav(){
+  var scrollTop    = $(window).scrollTop();
+  var menuTop = $('.header-container').offset().top;
+  if ( scrollTop >= menuTop ) {
+    $('.header').addClass('stuck');
+  } else {
+    $('.header').removeClass('stuck');
+  }
 }
+
+
 
 function markActiveLink(tagName) {
 
