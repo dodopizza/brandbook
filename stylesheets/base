@@ -115,6 +115,14 @@ h6 {
   letter-spacing: 2px;
   text-transform: uppercase; }
 
+.mobile {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  display: none; }
+  @media all and (max-width: 840px) {
+    .mobile {
+      display: block; } }
+
 strong {
   font-weight: 500; }
 
